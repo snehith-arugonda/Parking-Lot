@@ -1,0 +1,15 @@
+Y:\keka tasks\task19\ParkingLotSystem\bin\Debug\net6.0\ParkingLotSystem.exe
+Y:\keka tasks\task19\ParkingLotSystem\bin\Debug\net6.0\ParkingLotSystem.deps.json
+Y:\keka tasks\task19\ParkingLotSystem\bin\Debug\net6.0\ParkingLotSystem.runtimeconfig.json
+Y:\keka tasks\task19\ParkingLotSystem\bin\Debug\net6.0\ParkingLotSystem.dll
+Y:\keka tasks\task19\ParkingLotSystem\bin\Debug\net6.0\ParkingLotSystem.pdb
+Y:\keka tasks\task19\ParkingLotSystem\obj\Debug\net6.0\ParkingLotSystem.csproj.AssemblyReference.cache
+Y:\keka tasks\task19\ParkingLotSystem\obj\Debug\net6.0\ParkingLotSystem.GeneratedMSBuildEditorConfig.editorconfig
+Y:\keka tasks\task19\ParkingLotSystem\obj\Debug\net6.0\ParkingLotSystem.AssemblyInfoInputs.cache
+Y:\keka tasks\task19\ParkingLotSystem\obj\Debug\net6.0\ParkingLotSystem.AssemblyInfo.cs
+Y:\keka tasks\task19\ParkingLotSystem\obj\Debug\net6.0\ParkingLotSystem.csproj.CoreCompileInputs.cache
+Y:\keka tasks\task19\ParkingLotSystem\obj\Debug\net6.0\ParkingLotSystem.dll
+Y:\keka tasks\task19\ParkingLotSystem\obj\Debug\net6.0\refint\ParkingLotSystem.dll
+Y:\keka tasks\task19\ParkingLotSystem\obj\Debug\net6.0\ParkingLotSystem.pdb
+Y:\keka tasks\task19\ParkingLotSystem\obj\Debug\net6.0\ParkingLotSystem.genruntimeconfig.cache
+Y:\keka tasks\task19\ParkingLotSystem\obj\Debug\net6.0\ref\ParkingLotSystem.dll
