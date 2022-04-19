@@ -15,11 +15,11 @@ namespace ParkingLotSystem
                 _vechicleNumber = value;
             }
         }
-        public VehicleTypes VehicleType
+        public VehicleType VehicleType
         {
             get
             {
-                return VehicleTypes.FourWheeler;
+                return VehicleType.FourWheeler;
             }
         }
 

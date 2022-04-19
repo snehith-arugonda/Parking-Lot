@@ -12,7 +12,7 @@ namespace ParkingLotSystem
             }  
         }
 
-        private Dictionary<VehicleTypes, List<IVehicle>> vehicles = new Dictionary<VehicleTypes, List<IVehicle>>();
+        private Dictionary<VehicleType, List<IVehicle>> vehicles = new Dictionary<VehicleType, List<IVehicle>>();
         public void Initialize()
         {
             parkingServiceInstance.InitializeParkingLot();
@@ -21,7 +21,7 @@ namespace ParkingLotSystem
 
         private void InitializeVehicles()
         {
-            foreach (VehicleTypes item in Enum.GetValues(typeof(VehicleTypes)))
+            foreach (VehicleType item in Enum.GetValues(typeof(VehicleType)))
             {
                 vehicles[item] = new List<IVehicle>();
             }
@@ -31,12 +31,12 @@ namespace ParkingLotSystem
         {
             Console.WriteLine("\nProvide your vehicle type ");
             int num = 1;
-            foreach (VehicleTypes item in Enum.GetValues(typeof(VehicleTypes)))
+            foreach (VehicleType item in Enum.GetValues(typeof(VehicleType)))
             {
                 Console.WriteLine($"{num++}. {item}");
             }
 
-            if (!int.TryParse(Console.ReadLine(), out int type) || 0 > type || type > Enum.GetValues(typeof(VehicleTypes)).Length)
+            if (!int.TryParse(Console.ReadLine(), out int type) || 0 > type || type > Enum.GetValues(typeof(VehicleType)).Length)
             {
                 try
                 {
@@ -66,7 +66,7 @@ namespace ParkingLotSystem
                 switch (type)
                 {
                     case 1:
-                        bool slotAvailable = parkingServiceInstance.CheckForSlot(VehicleTypes.TwoWheeler);
+                        bool slotAvailable = parkingServiceInstance.CheckForSlot(VehicleType.TwoWheeler);
                         if (slotAvailable)
                         {
                             TwoWheeler TwoWheeler = new TwoWheeler();
@@ -74,7 +74,7 @@ namespace ParkingLotSystem
                         }
                         break;
                     case 2:
-                        slotAvailable = parkingServiceInstance.CheckForSlot(VehicleTypes.FourWheeler);
+                        slotAvailable = parkingServiceInstance.CheckForSlot(VehicleType.FourWheeler);
                         if (slotAvailable)
                         {
                             FourWheeler fourWheeler = new FourWheeler();
@@ -82,7 +82,7 @@ namespace ParkingLotSystem
                         }
                         break;
                     case 3:
-                        slotAvailable = parkingServiceInstance.CheckForSlot(VehicleTypes.HeavyVehicle);
+                        slotAvailable = parkingServiceInstance.CheckForSlot(VehicleType.HeavyVehicle);
                         if (slotAvailable)
                         {
                             HeavyVehicle HeavyVehicle = new HeavyVehicle();
@@ -96,13 +96,13 @@ namespace ParkingLotSystem
                 switch (type)
                 {
                     case 1:
-                        this.UnPark(VehicleTypes.TwoWheeler);
+                        this.UnPark(VehicleType.TwoWheeler);
                         break;
                     case 2:
-                        this.UnPark(VehicleTypes.FourWheeler);
+                        this.UnPark(VehicleType.FourWheeler);
                         break;
                     case 3:
-                        this.UnPark(VehicleTypes.HeavyVehicle);
+                        this.UnPark(VehicleType.HeavyVehicle);
                         break;
                 }
             }
@@ -117,7 +117,7 @@ namespace ParkingLotSystem
             parkingServiceInstance.InVehicle(vehicle);
         }
 
-        private void UnPark(VehicleTypes type)
+        private void UnPark(VehicleType type)
         {
             bool there = false;
             foreach (IVehicle vehicle in vehicles[type])

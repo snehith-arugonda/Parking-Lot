@@ -11,12 +11,12 @@ namespace ParkingLotSystem
             }  
         }
 
-        private Dictionary<VehicleTypes, List<bool>> parkingSlots = new Dictionary<VehicleTypes, List<bool>>();
+        private Dictionary<VehicleType, List<bool>> parkingSlots = new Dictionary<VehicleType, List<bool>>();
         
         public void CreateParkingLot()
         {
             Random random = new Random();
-            foreach (VehicleTypes item in Enum.GetValues(typeof(VehicleTypes)))
+            foreach (VehicleType item in Enum.GetValues(typeof(VehicleType)))
             {
                 int slots = random.Next(4, 7);
                 parkingSlots[item] = new List<bool>();
@@ -28,19 +28,19 @@ namespace ParkingLotSystem
             }
         }
 
-        public bool SlotCheck(VehicleTypes type)
+        public bool SlotCheck(VehicleType type)
         {
             return parkingSlots[type].Contains(false);
         }
 
-        public int AssignSlot(VehicleTypes type)
+        public int AssignSlot(VehicleType type)
         {
             int index = parkingSlots[type].IndexOf(false);
             parkingSlots[type][index] = true;
             return index;
         }
 
-        public void FreeTheSlot(int slot, VehicleTypes type)
+        public void FreeTheSlot(int slot, VehicleType type)
         {
             parkingSlots[type][slot] = false;
         }

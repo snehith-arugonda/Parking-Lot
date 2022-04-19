@@ -15,11 +15,11 @@ namespace ParkingLotSystem
                 _vechicleNumber = value;
             }
         }
-        public VehicleTypes VehicleType
+        public VehicleType VehicleType
         {
             get
             {
-                return VehicleTypes.TwoWheeler;
+                return VehicleType.TwoWheeler;
             }
         }
         public ParkingTicket Ticket

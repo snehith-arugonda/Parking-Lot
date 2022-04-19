@@ -18,7 +18,7 @@ namespace ParkingLotSystem
             parkingLotInstance.CreateParkingLot();
         }
 
-        public bool CheckForSlot(VehicleTypes type)
+        public bool CheckForSlot(VehicleType type)
         {
             bool slotNumber = parkingLotInstance.SlotCheck(type);
             if(slotNumber)
@@ -41,7 +41,7 @@ namespace ParkingLotSystem
             Console.WriteLine(vehicle.Ticket.ToString());
         }
 
-        public void OutVehicle(ParkingTicket ticket, VehicleTypes type)
+        public void OutVehicle(ParkingTicket ticket, VehicleType type)
         {
             ParkingTicket.Dispose(ticket);
             parkingLotInstance.FreeTheSlot(ticket.SlotNumber, type);

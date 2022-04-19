@@ -1,6 +1,6 @@
 namespace ParkingLotSystem
 {
-    public enum VehicleTypes
+    public enum VehicleType
     {
         TwoWheeler,
         FourWheeler,

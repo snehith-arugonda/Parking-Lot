@@ -6,7 +6,7 @@ namespace ParkingLotSystem
         {
             get;set;
         }
-        VehicleTypes VehicleType
+        VehicleType VehicleType
         {
             get;
         }
