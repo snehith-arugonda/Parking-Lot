@@ -1,6 +1,6 @@
 namespace ParkingLotSystem
 {
-    interface Ivehicle
+    interface IVehicle
     {
         string VehicleNumber
         {

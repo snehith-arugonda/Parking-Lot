@@ -4,11 +4,11 @@
     {
         public static void Main(string[] args)
         {
-            ParkingLot.CreateParkingLot();
-            CustomerService.VehiclesTypes();
+            CustomerService customerInstance = CustomerService.CustomerInstance;
+            customerInstance.Initialize();
             while(true)
             {
-                CustomerService.Customer();
+                customerInstance.Customer();
             }
         }
     }

@@ -1,6 +1,6 @@
 namespace ParkingLotSystem
 {
-    class  HeavyVehicle:Ivehicle
+    class  HeavyVehicle:IVehicle
     {
         private string _vechicleNumber = "";
         private ParkingTicket _ticket = new ParkingTicket();
@@ -19,7 +19,7 @@ namespace ParkingLotSystem
         {
             get
             {
-                return VehicleTypes.heavyVehicle;
+                return VehicleTypes.HeavyVehicle;
             }
         }
 

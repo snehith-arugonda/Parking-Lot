@@ -2,9 +2,18 @@ namespace ParkingLotSystem
 {
     class ParkingLot
     {
-        private static Dictionary<VehicleTypes, List<bool>> parkingSlots = new Dictionary<VehicleTypes, List<bool>>();
+        private ParkingLot() {}  
+        private static readonly ParkingLot instance = new ParkingLot();  
+        public static ParkingLot ParkingLotInstance 
+        {  
+            get {
+                return instance;  
+            }  
+        }
+
+        private Dictionary<VehicleTypes, List<bool>> parkingSlots = new Dictionary<VehicleTypes, List<bool>>();
         
-        public static void CreateParkingLot()
+        public void CreateParkingLot()
         {
             Random random = new Random();
             foreach (VehicleTypes item in Enum.GetValues(typeof(VehicleTypes)))
@@ -19,7 +28,7 @@ namespace ParkingLotSystem
             }
         }
 
-        public static string GetParkingLot()
+        public string GetParkingLot()
         {
             string lot = "\n";
             foreach (VehicleTypes item in Enum.GetValues(typeof(VehicleTypes)))
@@ -34,21 +43,21 @@ namespace ParkingLotSystem
             return lot;
         }
 
-        public static bool SlotCheck(VehicleTypes type, int i)
+        public bool SlotCheck(VehicleTypes type, int i)
         {
-            return ParkingLot.parkingSlots[type].Contains(false);
+            return parkingSlots[type].Contains(false);
         }
 
-        public static int SlotCheck(VehicleTypes type)
+        public int SlotCheck(VehicleTypes type)
         {
-            int index = ParkingLot.parkingSlots[type].IndexOf(false);
-            ParkingLot.parkingSlots[type][index] = true;
+            int index = parkingSlots[type].IndexOf(false);
+            parkingSlots[type][index] = true;
             return index;
         }
 
-        public static void FreeTheSlot(int slot, VehicleTypes type)
+        public void FreeTheSlot(int slot, VehicleTypes type)
         {
-            ParkingLot.parkingSlots[type][slot] = false;
+            parkingSlots[type][slot] = false;
         }
 
     }
