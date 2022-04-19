@@ -2,7 +2,6 @@ namespace ParkingLotSystem
 {
     class ParkingLot
     {
-        private ParkingLot() {}  
         private static readonly ParkingLot instance = new ParkingLot();  
         public static ParkingLot ParkingLotInstance 
         {  
@@ -10,6 +9,7 @@ namespace ParkingLotSystem
                 return instance;  
             }  
         }
+        private ParkingLot() {}  
 
         private Dictionary<VehicleType, List<bool>> parkingSlots = new Dictionary<VehicleType, List<bool>>();
         

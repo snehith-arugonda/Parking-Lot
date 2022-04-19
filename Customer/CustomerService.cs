@@ -2,7 +2,6 @@ namespace ParkingLotSystem
 {
     class CustomerService
     {
-        private CustomerService() {}  
         private static readonly CustomerService instance = new CustomerService();  
         private readonly ParkingService parkingServiceInstance = ParkingService.ParkingServiceInstance;
         public static CustomerService CustomerInstance 
@@ -11,6 +10,7 @@ namespace ParkingLotSystem
                 return instance;  
             }  
         }
+        private CustomerService() {}  
 
         private Dictionary<VehicleType, List<IVehicle>> vehicles = new Dictionary<VehicleType, List<IVehicle>>();
         public void Initialize()

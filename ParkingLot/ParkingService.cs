@@ -3,7 +3,6 @@ namespace ParkingLotSystem
     class ParkingService
     {
 
-        private ParkingService() {}  
         private static readonly ParkingService instance = new ParkingService();
         public static ParkingService ParkingServiceInstance 
         {  
@@ -11,6 +10,7 @@ namespace ParkingLotSystem
                 return instance;  
             }  
         }
+        private ParkingService() {}  
         private static readonly ParkingLot parkingLotInstance = ParkingLot.ParkingLotInstance;
 
         public void InitializeParkingLot()
