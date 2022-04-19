@@ -20,7 +20,7 @@ namespace ParkingLotSystem
 
         public bool CheckForSlot(VehicleTypes type)
         {
-            bool slotNumber = parkingLotInstance.SlotCheck(type, 0);
+            bool slotNumber = parkingLotInstance.SlotCheck(type);
             if(slotNumber)
             {
                 Console.WriteLine("\n Slot is available \n");
@@ -35,7 +35,7 @@ namespace ParkingLotSystem
 
         public void InVehicle(IVehicle vehicle)
         {
-            int slotNumber = parkingLotInstance.SlotCheck(vehicle.VehicleType);
+            int slotNumber = parkingLotInstance.AssignSlot(vehicle.VehicleType);
             vehicle.Ticket = new ParkingTicket(slotNumber, vehicle.VehicleNumber);
             Console.WriteLine(" \n please collect your ticket");
             Console.WriteLine(vehicle.Ticket.ToString());

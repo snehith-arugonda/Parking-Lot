@@ -28,27 +28,12 @@ namespace ParkingLotSystem
             }
         }
 
-        public string GetParkingLot()
-        {
-            string lot = "\n";
-            foreach (VehicleTypes item in Enum.GetValues(typeof(VehicleTypes)))
-            {
-                lot += item.ToString() + " ";
-                for (int i = 1; i < parkingSlots[item].Count ; i++)
-                {
-                    lot += parkingSlots[item][i].ToString() +" ";
-                }
-                lot += "\n";
-            }
-            return lot;
-        }
-
-        public bool SlotCheck(VehicleTypes type, int i)
+        public bool SlotCheck(VehicleTypes type)
         {
             return parkingSlots[type].Contains(false);
         }
 
-        public int SlotCheck(VehicleTypes type)
+        public int AssignSlot(VehicleTypes type)
         {
             int index = parkingSlots[type].IndexOf(false);
             parkingSlots[type][index] = true;
