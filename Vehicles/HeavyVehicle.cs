@@ -2,19 +2,7 @@ namespace ParkingLotSystem
 {
     class  HeavyVehicle:IVehicle
     {
-        private string _vechicleNumber = "";
-        private ParkingTicket _ticket = new ParkingTicket();
-        public string VehicleNumber
-        {
-            get
-            {
-                return _vechicleNumber;
-            }
-            set
-            {
-                _vechicleNumber = value;
-            }
-        }
+        public string VehicleNumber{ get;set; } = string.Empty;
         public VehicleType VehicleType
         {
             get
@@ -23,17 +11,7 @@ namespace ParkingLotSystem
             }
         }
 
-        public ParkingTicket Ticket
-        {
-            get
-            {
-                return _ticket;
-            }
-            set
-            {
-                _ticket = value;
-            }
-        }
+        public ParkingTicket Ticket{get;set;}
 
         public override string ToString()
         {

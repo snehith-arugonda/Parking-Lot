@@ -5,13 +5,24 @@ namespace ParkingLotSystem
         private string _vehicleNumber = " ";
         private int _slotNumber;
         private DateTime _inTime;
-        private DateTime _outTime;
+        private DateTime? _outTime = null;
         
         public int SlotNumber
         {
             get
             {
                 return _slotNumber;
+            }
+        }
+        public DateTime? OutTime
+        {
+            get
+            {
+                return _outTime;
+            }
+            set
+            {
+                _outTime = value;
             }
         }
         public ParkingTicket()
@@ -32,7 +43,7 @@ namespace ParkingLotSystem
         }   
         public override string ToString()
         {
-            return $"Vehicle Number : {_vehicleNumber}\nSlot Number : {_slotNumber}\nIn Time : {_inTime}";
+            return $"\nVehicle Number : {_vehicleNumber}\nSlot Number : {_slotNumber}\nIn Time : {_inTime}\nOut Time : {_outTime}";
         }
     }
 }

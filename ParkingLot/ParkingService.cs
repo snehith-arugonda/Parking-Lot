@@ -18,6 +18,11 @@ namespace ParkingLotSystem
             parkingLotInstance.CreateParkingLot();
         }
 
+        public string GetParkingLot()
+        {
+            return parkingLotInstance.GetParkingLot();
+        }
+
         public bool CheckForSlot(VehicleType type)
         {
             bool slotNumber = parkingLotInstance.SlotCheck(type);

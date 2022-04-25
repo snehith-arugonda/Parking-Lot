@@ -106,7 +106,7 @@ namespace ParkingLotSystem
                         break;
                 }
             }
-
+            Console.WriteLine(parkingServiceInstance.GetParkingLot());
         }
 
         private void NewVehicle(IVehicle vehicle)
@@ -147,7 +147,10 @@ namespace ParkingLotSystem
                     if (vehicle.Ticket.SlotNumber == slot)
                     {
                         parkingServiceInstance.OutVehicle(vehicle.Ticket, type);
+                        vehicle.Ticket.OutTime = DateTime.Now;
+                        Console.WriteLine(vehicle.Ticket.ToString());
                         vehicles[type].Remove(vehicle);
+                        Console.WriteLine("Vehicle Unparked \n");
                         selectSlot = true;
                         break;
                     }
